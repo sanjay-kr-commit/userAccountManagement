@@ -9,6 +9,6 @@
 using namespace std ;
 
 static const string RECORD_FILE = "records.txt" ;
-static const string TEMP_RECORD_FILE = "record.temp.txt" ;
+static const string TEMP_RECORD_FILE = "records.temp.txt" ;
 
 #endif //STATICVARIABLES_H

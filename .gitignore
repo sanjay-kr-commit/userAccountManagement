@@ -1,3 +1,5 @@
 cmake-build-debug/
 records.txt
 record.temp.txt
+records.temp.txt
+build/

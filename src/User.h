@@ -10,10 +10,10 @@ using namespace std ;
 
 class User {
 
-    public:
+public:
     string name , password ;
 
-    public:
+public:
     string serialize() const ;
 
 };

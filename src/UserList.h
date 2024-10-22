@@ -13,7 +13,7 @@ class UserList {
     vector <User*> deleted ;
     vector <User*> added ;
 
-    public:
+public:
     void loadRecords() ;
     void saveRecords() ;
     void addUser(User *user) ;
