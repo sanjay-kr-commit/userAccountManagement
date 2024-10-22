@@ -22,9 +22,15 @@ int main(int argc, char* argv[])
     return 0 ;
 }
 
+void updateChanges( UserList userList ) {
+    cout << endl << "Writing Changes To Disk " << endl ;
+    userList.saveRecords() ;
+    cout << "Transaction Complete" << endl << endl ;
+}
+
 void mainTui() {
     UserList userList;
-    cout << "Reading Records From Disk : " ;
+    cout << "Reading Records From Disk " << endl ;
     userList.loadRecords() ;
     cout << "Transaction Complete" << endl << endl ;
     cout << "Here are List of operation\nl - login user\nr - register user\nd - delete user\nq - quit" << endl << endl;
@@ -40,6 +46,7 @@ void mainTui() {
                 cout << "Enter Password : " ;
                 cin >> password ;
                 userList.addUser( username , password ) ;
+                updateChanges(userList) ;
             } break;
             case 'l' : {
                 string username , password ;
@@ -48,8 +55,8 @@ void mainTui() {
                 cout << "Enter Password : " ;
                 cin >> password ;
                 if ( userList.login( username , password ) ) {
-                    cout << "Logged In Successfully!" << endl ;
-                } else cout << "Logged In Failed!" << endl ;
+                    cout << "Logged In Successfully!" << endl << endl ;
+                } else cout << "Logged In Failed!" << endl << endl ;
             } break;
             case 'd' : {
                 string username , password ;
@@ -58,13 +65,12 @@ void mainTui() {
                 cout << "Enter Password : " ;
                 cin >> password ;
                 userList.deleteUser( username , password ) ;
+                updateChanges(userList) ;
             } break;
             case 'q' : break;
             default: cout << "Invalid Choice!" << endl ;
         }
-        cout << "Writing Changes To Disk : " ;
-        userList.saveRecords() ;
-        cout << "Transaction Complete" << endl << endl ;
+
     } while ( op != 'q' ) ;
 }
 
