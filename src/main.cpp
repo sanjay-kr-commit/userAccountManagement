@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     cout << "Reading Records From Disk " << endl ;
     userList.loadRecords() ;
     cout << "Transaction Complete" << endl << endl ;
-    return mainGui( argc, argv , &userList ) ;
+    //return mainGui( argc, argv , &userList ) ;
     if ( argc > 1 ) {
         string isGui = argv[1] ;
         if ( isGui == "--gui" ) return mainGui( argc, argv , &userList ) ;
